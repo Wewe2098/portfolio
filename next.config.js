@@ -2,5 +2,12 @@
 const nextConfig = {}
 
 module.exports = {
-    target: 'serverless'
-    }
+  ...nextConfig,
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader', 'postcss-loader'],
+    });
+    return config;
+  },
+};

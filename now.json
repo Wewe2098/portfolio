@@ -1,4 +1,7 @@
 {
-    "version": 2,
-    "builds": [{ "src": "package.json", "use": "@now/next" }]
+  "functions": {
+    "pages/api/users/**/*.js": {
+      "maxDuration": 10
     }
+  }
+}
